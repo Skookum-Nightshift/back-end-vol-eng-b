@@ -25,6 +25,12 @@
     vagrant ssh
     ```
 
+6. Change to the project folder in /vagrant -- this is where the project directory from your laptop mounted on the virtual machine
+
+    ```
+    cd /vagrant
+    ```
+
 ### Install ruby dependencies
 
 ```
