@@ -19,6 +19,12 @@
     vagrant up
     ```
 
+5. Log on to the virtual machine
+
+    ```
+    vagrant ssh
+    ```
+
 ### Install ruby dependencies
 
 ```
