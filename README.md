@@ -1,8 +1,35 @@
 ## Development
 
+### Setup dev virtual machine
+
+1. Install Vagrant from http://www.vagrantup.com/downloads.html
+2. Install VirtualBox from https://www.virtualbox.org/wiki/Downloads
+3. Clone this project (you can put it somewhere besides ~/src)
+
+    ```
+    mkdir ~/src
+    cd ~/src
+    git clone git@github.com:Skookum-Nightshift/back-end-vol-eng-b.git
+    ```
+
+4. Start virtual server using Vagrant
+
+    ```
+    # cd ~/src/back-end-vol-eng-b
+    vagrant up
+    ```
+
+### Install ruby dependencies
+
+```
+cd /vagrant
+gem install bundler
+bundle install
+```
+
 ### Set up .env
 
-- rename `example.env` to `.env`
+- make a copy of `example.env` as `.env`
 
 ```
 RACK_ENV=development
@@ -24,9 +51,14 @@ STRIPE_SECRET=placeholder
 STRIPE_PUBLISHABLE=placeholder
 ```
 
+### Run database migrations
+
+```
+rake db:migrate RAILS_ENV=development
+```
 
 ### Run
-- make sure that `log/development.log` exists if not run `rails s`
+- make sure that `log/development.log` exists if not run `rails s` (CTRL-C after rails s)
 - then run by calling `foreman start`
 
 ### Authenticated Ajax requests
