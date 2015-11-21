@@ -1,0 +1,46 @@
+<div class="subcategory-header">
+      <div class="jumbotron">
+        <h1><%= @event.name %></h1>
+      </div>
+    </div>
+<div class="commitcontainer">
+  <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@event.latitude}%2C#{@event.longitude}", class: "commitmap"%>
+</div>
+    
+
+<p>
+  <strong>Image:</strong>
+   <img src="<%= @event.image %>">
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @event.address %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @event.date %>
+</p>
+
+<p>
+  <strong>Time:</strong>
+  <%= @event.time %>
+</p>
+
+<p>
+  <strong>Opportunity:</strong>
+  <%= @event.opportunity_id %>
+</p>
+
+
+
+<h3>Nearby locations</h3>
+<ul>
+<% for event in @event.nearbys(10) %>
+  <li><%= link_to event.address, event %> (<%= event.distance.round(2) %> miles)</li>
+<% end %>
+</ul>
+
+<%= link_to 'Edit', edit_event_path(@event) %> |
+<%= link_to 'Back', events_path %>

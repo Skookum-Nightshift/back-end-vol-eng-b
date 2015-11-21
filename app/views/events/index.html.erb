@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Events</h1>
+
+<%= form_tag events_path, :method => :get do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search Near", :name => nil %>
+  </p>
+<% end %>
+
+
+
+
+<table>
+  <tr>
+    <th>Address</th>
+    <th>Latitude</th>
+    <th>Longitude</th>
+  </tr>
+  <% for event in @events %>
+    <tr>
+      <td><%= event.address %></td>
+      <td><%= event.latitude %></td>
+      <td><%= event.longitude %></td>
+      <td><%= link_to "Show", event %></td>
+    </tr>
+  <% end %>
+</table>
+<br>
+

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>United Way | Volunteering Opportunities</title>
+      <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <div class="landing-page">
+      <div class="container">
+        <img src="https://secure.unitedway.org/page/-/GCL/gcl_toolkit_downloads/logos/2012/Live%20United%20United%20Way%20Lock%20Up%20Artwork/rgb/jpg/united-way-lock-up-rgb.jpg" width="343" height="339" alt="United Way Volunteering Site" class="img-responsive center-block">
+        <p class="lead text-center text-uppercase">Get United.</p>
+        <p class="lead text-center text-uppercase">We've created an app that makes it easier than ever to start giving back.</p>
+        <p class="lead text-center text-uppercase">All you need to do is find your calling</p>
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="singlebutton"></label>
+          <div class="col-md-4 center-block">
+            <%= link_to 'Get Involved Now', location_index_path, class:"btn btn-primary center-block" %>
+          </div>  
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

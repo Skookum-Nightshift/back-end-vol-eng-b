@@ -1,0 +1,39 @@
+<div class="subcategory-header">
+      <div class="jumbotron">
+        <h1><%= @opportunity.name %></h1>
+        <h2>Find your match below. Click or tap the “Commit” button to get paired with an organization.</h2>
+      </div>
+    </div>
+
+  
+   <div>
+    <% @opportunity.events.each do |event| %>
+        <div class="col-sm-6 col-md-4">
+          <div class="thumbnail">
+            <img src="<%= event.image %>">
+            <div class="caption">
+              <h3 class="ham"><%= event.name %></h3>
+              <p class="ham">Organization: <%= event.organization %></p>
+              <p>Date: <%= event.date %></p>
+              <p>Time: <%= event.time %></p>
+              <p>Address: <%= event.address %></p>
+              <p>Notification: via e-mail</p>
+              <p>
+              <%if signed_in?%>
+              <%=link_to "", class: "btn btn-primary pull-right", data: {target: @cart_action, addUrl: add_to_cart_path(@event), removeUrl: remove_from_cart_path(@event)} do%>
+                 Commit
+              <%end%>
+            <%end%></p>
+            
+            </div>
+          </div>
+
+        </div>
+        <% end %>
+      </div>
+      
+      
+   
+
+
+<%= link_to 'Back', opportunities_path, class:"btn btn-default back" %>

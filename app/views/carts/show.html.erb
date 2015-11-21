@@ -1,0 +1,33 @@
+<div class="subcategory-header">
+      <div class="jumbotron">
+        <h1>Committed Services</h1>
+        <h2>Listed below you will find all of the upcoming opportunities you have agreed to commit to</h2>
+      </div>
+    </div>
+
+ <div class="row">
+  <% @cart_events.each do |event|%>
+    <div class="col-sm-6 col-md-4">
+        <div class="thumbnail">
+          <%=image_tag event.image%>
+          <div class="caption">
+            <h3><%= event.name %></h3>
+              <p>Organization: <%= event.organization %></p>
+              <p>Date: <%= event.date %></p>
+              <p>Time: <%= event.time %></p>
+              <p>Address: <%= event.address %></p>
+              <p>Notification: via e-mail</p>
+            </div>
+            <%=link_to event do%>
+            more
+            <%end%>
+             <%=link_to "" , data: {targetUrl: remove_from_cart_path(event)} do%>
+             remove
+            <%end%>
+          </div>
+          </div>
+          <%end%>
+    </div>
+
+    
+      
